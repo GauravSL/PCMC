@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dp10">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/red_edittext_rounded_corner"
+        android:padding="@dimen/dp10"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/layoutBottom">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:background="@drawable/red_edittext_rounded_corner"
+        android:src="@drawable/profile_icon" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/red_700"
+        android:layout_marginTop="@dimen/dp10"/>
+    <TextView
+        android:text="Personal Details"
+        style="@style/BoldTextviewStyleBlack"
+        android:textSize="@dimen/sp16"
+        android:layout_gravity="center"
+        android:layout_marginTop="0dp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/red_700"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/dp10">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name :- "
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp16"
+            android:minWidth="130dp"/>
+
+        <TextView
+            android:id="@+id/txtName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gaurav Sureshrao Lakade"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp16"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/dp10">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aadhar Number :- "
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp16"
+            android:minWidth="130dp"/>
+
+        <TextView
+            android:id="@+id/txtaadharNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_aadhar_number"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp16"
+            android:textStyle="bold" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp10"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="UDID :- "
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp16"
+            android:minWidth="130dp"/>
+
+        <TextView
+            android:id="@+id/txtUDID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GRD686789875687512"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp16"
+            android:textStyle="bold" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp10"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date of Birth :- "
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp16"
+            android:minWidth="130dp"/>
+
+        <TextView
+            android:id="@+id/txtDateOfBirth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="19-01-1998"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp16"
+            android:textStyle="bold" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp10"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Divyang Type :- "
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp16"
+            android:minWidth="130dp"/>
+
+        <TextView
+            android:id="@+id/txtDivyangType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Blindness"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp16"
+            android:textStyle="bold" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp10"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mobile Number :- "
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp16"
+            android:minWidth="130dp"/>
+
+        <TextView
+            android:id="@+id/txtMobileNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="9875687512"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp16"
+            android:textStyle="bold" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp10"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PCMC Zone :- "
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp16"
+            android:minWidth="130dp"/>
+
+        <TextView
+            android:id="@+id/txtPCMCZone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Zone A"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp16"
+            android:textStyle="bold" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp10"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PCMC Ward :- "
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp16"
+            android:minWidth="130dp"/>
+
+        <TextView
+            android:id="@+id/txtPCMCWard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ward 11"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp16"
+            android:textStyle="bold" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp10"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Address :- "
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp16"
+            android:minWidth="130dp"/>
+
+        <TextView
+            android:id="@+id/txtAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ganesh Nagar, Behind Chinchwad Railway station, Chinchwad, Pune-411027"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp16"
+            android:textStyle="bold" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/dp10">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/red_700"/>
+    <TextView
+        android:text="Parent Details"
+        style="@style/BoldTextviewStyleBlack"
+        android:textSize="@dimen/sp16"
+        android:layout_gravity="center"
+        android:layout_marginTop="0dp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/red_700"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/dp10">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name :- "
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp16"
+                android:minWidth="130dp"/>
+
+            <TextView
+                android:id="@+id/txtParentName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Suresh S Lakade"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp16"
+                android:textStyle="bold"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/dp10">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Aadhar Number :- "
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp16"
+                android:minWidth="130dp"/>
+
+            <TextView
+                android:id="@+id/txtParentAadharNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/enter_aadhar_number"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp16"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp10"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date of Birth :- "
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp16"
+                android:minWidth="130dp"/>
+
+            <TextView
+                android:id="@+id/txtParentDateOfBirth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="19-01-1998"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp16"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp10"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mobile Number :- "
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp16"
+                android:minWidth="130dp"/>
+
+            <TextView
+                android:id="@+id/txtParentMobileNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="9875687512"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp16"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp10"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Address :- "
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp16"
+                android:minWidth="130dp"/>
+
+            <TextView
+                android:id="@+id/txtParentAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ganesh Nagar, Behind Chinchwad Railway station, Chinchwad, Pune-411027"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp16"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/layoutBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/dp5">
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonGenerateCert"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp30"
+            android:layout_gravity="start"
+            android:background="@drawable/red_button_rounded_corner"
+            android:elevation="@dimen/dp25"
+            android:text="@string/text_generate_cert"
+            android:textColor="@color/white"
+            android:layout_weight="1"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonScanFinger"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp30"
+            android:layout_gravity="end"
+            android:background="@drawable/red_button_rounded_corner"
+            android:elevation="@dimen/dp25"
+            android:text="@string/text_edit_details"
+            android:textColor="@color/white"
+            android:layout_weight="1"
+            android:layout_marginStart="@dimen/dp20"/>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="blue_200">#FF49A4FE</color>
+    <color name="blue_50_trans">#8049A4FE</color>
+    <color name="blue_15_trans">#2649A4FE</color>
+    <color name="blue_500">#FF0062C4</color>
+    <color name="blue_700">#FF0052A5</color>
+    <color name="red_200">#FFDA251C</color>
+    <color name="red_50_trans">#80CB231B</color>
+    <color name="red_15_trans">#26CB231B</color>
+    <color name="red_500">#FFDA251C</color>
+    <color name="red_700">#FFCB231B</color>
+    <!--<color name="red_200">#FFDA251C</color>
+    <color name="red_700">#FFCB231B</color>-->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="gray_15_trans">#33c3c3c3</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="light_blue_900">#FF01579B</color>
+    <color name="light_blue_A200">#FF40C4FF</color>
+    <color name="light_blue_A400">#FF00B0FF</color>
+    <color name="black_overlay">#66000000</color>
+
+</resources>

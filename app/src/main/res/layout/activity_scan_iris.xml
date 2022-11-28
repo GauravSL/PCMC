@@ -1,0 +1,172 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/dp10"
+    tools:context=".scanners.ActivityScanIris" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/imgIris"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_gravity="center"
+                android:background="@drawable/red_edittext_rounded_corner"
+                android:src="@drawable/eye_icon"
+                android:padding="@dimen/dp5"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/buttonContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/dp10">
+
+            <Button
+                android:id="@+id/btnInit"
+                style="@style/buttonbig2"
+                android:onClick="onControlClicked"
+                android:text="@string/txt_start_scanner" />
+
+            <Button
+                android:id="@+id/btnUninit"
+                style="@style/buttonbig2"
+                android:onClick="onControlClicked"
+                android:text="@string/txt_stop_scanner" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btnSyncCapture"
+                style="@style/buttonbig2"
+                android:onClick="onControlClicked"
+                android:text="@string/txt_start_capture" />
+
+            <Button
+                android:id="@+id/btnStopCapture"
+                style="@style/buttonbig2"
+                android:onClick="onControlClicked"
+                android:text="@string/txt_stop_capture" />
+        </LinearLayout>
+        <Button
+            android:id="@+id/btnSubmit"
+            style="@style/buttonbig2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onControlClicked"
+            android:text="@string/txt_Submit"
+            android:visibility="gone"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1.4"
+                android:layout_height="wrap_content"
+                android:text="Quality(0-100): "
+                android:textColor="@android:color/black"/>
+
+            <EditText
+                android:id="@+id/edtQuality"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/editbox_background_normal"
+                android:text="40" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Timeout: "
+                android:textColor="@android:color/black"/>
+
+            <EditText
+                android:id="@+id/edtTimeOut"
+                android:layout_width="0dp"
+                android:layout_weight="1.2"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/editbox_background_normal"
+                android:text="20000" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="top"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/dp10">
+
+        <TextView
+            android:id="@+id/lblMessage"
+            style="@style/message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/red_edittext_rounded_corner"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="@string/txt_no_device_connected"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/txtEventLog"
+            style="@style/message"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.70"
+            android:background="@drawable/message"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:gravity="top|left"
+            android:inputType="textMultiLine"
+            android:padding="5dp"
+            android:text=""
+            android:textSize="14dp"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/btnClearLog"
+            style="@style/buttonfull"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button"
+            android:onClick="onControlClicked"
+            android:text="@string/ClearLog"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+</LinearLayout>

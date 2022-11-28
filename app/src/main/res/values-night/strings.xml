@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PCMC Diwyang</string>
+    <string name="title_list">List</string>
+    <string name="title_registration">Registration</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="aadhar_number">Aadhar Number</string>
+    <string name="text_check">Check</string>
+    <string name="name">Name</string>
+    <string name="text_first_name">First Name</string>
+    <string name="text_middle_name">Middle Name</string>
+    <string name="text_last_name">Last Name</string>
+    <string name="enter_aadhar_number">XXXX-XXXX-XXXX</string>
+    <string name="text_DOB">Date of Birth</string>
+    <string name="text_UDID">UDID (Unique Disability ID)</string>
+    <string name="text_mobile_number">Mobile Number</string>
+    <string name="text_addredd">Address</string>
+    <string name="registration_step_1">Registration Step 1/5</string>
+    <string name="registration_step_2">Registration Step 2/5</string>
+    <string name="registration_step_3">Registration Step 3/5</string>
+    <string name="registration_step_4">Registration Step 4/5</string>
+    <string name="registration_step_5">Registration Step 5/5</string>
+    <string name="text_add_parents_details">  Add Parent Details</string>
+    <string name="text_type_of_divyang">Type Of Divyang</string>
+    <string name="text_parent_name">Parent Name</string>
+    <string name="text_same_as_above">Same As Above</string>
+    <string name="text_next">Next</string>
+    <string name="text_capture">Capture</string>
+    <string name="text_scan">Scan</string>
+    <string name="text_pcmc_zone">PCMC Zone</string>
+    <string name="text_zone_ward">Ward</string>
+    <string name="text_search">Search</string>
+    <string name="text_divyang_list">Divyang List</string>
+    <string name="text_new_registration">New Registration</string>
+    <string name="text_login">Login</string>
+    <string name="text_username">Username</string>
+    <string name="text_password">Password</string>
+    <string name="text_not_available">Not Available</string>
+    <string name="text_generate_cert">Generate Certificate</string>
+    <string name="text_edit_details">Edit Details</string>
+    <string name="txt_Submit">Submit</string>
+    <string name="txt_Finger_Print_Scan">Finger Print Scan</string>
+    <string name="txt_Iris_Scan">Iris  Scan</string>
+    <string name="txt_no_device_connected">No Device Connected</string>
+    <string name="txt_aadhar_card_front">Aadhar Card Front</string>
+    <string name="text_upload">Upload</string>
+    <string name="txt_aadhar_card_back">Aadhar Card Back</string>
+    <string name="txt_personal_details">Personal Details</string>
+    <string name="txt_profile_picture">Profile Picture</string>
+    <string name="txt_scan_fingerprint">Scan Finger Print</string>
+    <string name="txt_scan_eyes">Scan Eyes</string>
+    <string name="txt_upload_docs">Upload Documents</string>
+
+    <array name="type">
+        <item >पूर्णतः अंध (Blindness)</item>
+        <item >ंशतः अंध (Low Vision)</item>
+        <item >कर्णबधीर (Hearing Impairment)</item>
+        <item >वाचा दोष (Speech and Language Disability)</item>
+        <item >अस्थिव्यंग (Locomotor Disability)</item>
+        <item >मानसिक आजार (Mental Illness)</item>
+        <item >अध्ययन अक्षम (Learning Disability)</item>
+        <item >मेंदूचा पक्षाघात (Cerebral Palsy)</item>
+        <item >स्वमग्न (Autism)</item>
+        <item >बहुविकलांग (Multiple Disability)</item>
+        <item >कुष्ठरोग (Leprosy Cured Persons)</item>
+        <item >बुटकेपणा (Dwarfism)</item>
+        <item >बौद्धिक अक्षमता (Intellectual Disability)</item>
+        <item >माशपेशीय क्षरण (Muscular Disability)</item>
+        <item >मज्जासंस्थेचे तीव्र आजार (chorionic Neurological Conditions)</item>
+        <item > मल्टिपल स्क्लेरोसिस(Multiple sclerosis)</item>
+        <item >थॅलेसिमिया (Thalassemia)</item>
+        <item >अधिक रक्तस्त्राव (Hemophilia)</item>
+        <item >सिकल सेल (Sickle Cell Disease)</item>
+        <item > अॅसिड अटॅक (Acid Attack Victim)</item>
+        <item > कंपवात रोग (Parkinsons Disease)</item>
+    </array>
+
+    <array name="zone">
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+        <item>D</item>
+        <item>E</item>
+        <item>F</item>
+        <item>G</item>
+        <item>H</item>
+    </array>
+
+    <array name="ward">
+        <item>1a</item>
+        <item>10a</item>
+        <item>12a</item>
+        <item>15a</item>
+    </array>
+</resources>

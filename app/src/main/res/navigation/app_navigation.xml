@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_list">
+
+    <fragment
+        android:id="@+id/navigation_list"
+        android:name="com.example.pcmcdiwyang.features.diwyanglist.DiwyangListFragment"
+        android:label="@string/title_list"
+        tools:layout="@layout/fragment_diwyang_list" />
+
+    <fragment
+        android:id="@+id/navigation_register"
+        android:name="com.example.pcmcdiwyang.features.registerDiwyang.RegisterDiwyangFragment"
+        android:label="@string/title_registration"
+        tools:layout="@layout/fragment_register_diwyang" />
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.example.pcmcdiwyang.features.notifications.NotificationsFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications" />
+</navigation>
