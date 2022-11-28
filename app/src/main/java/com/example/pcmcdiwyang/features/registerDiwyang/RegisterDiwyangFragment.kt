@@ -38,6 +38,7 @@ import android.location.Geocoder
 import android.location.Location
 import android.location.LocationManager
 import android.provider.Settings
+import android.widget.TextView
 import androidx.core.app.ActivityCompat
 import com.google.android.gms.location.LocationServices
 
@@ -67,6 +68,10 @@ class RegisterDiwyangFragment : Fragment() {
     val zoneMap : Map<String, List<String>> = mapOf("A Zone" to listZoneA,"B Zone" to listZoneB, "C Zone" to listZoneC,
         "D Zone" to listZoneD, "E Zone" to listZoneE, "F Zone" to listZoneF, "G Zone" to listZoneG, "H Zone" to listZoneH)
    lateinit var zoneList: Array<String>
+   lateinit var registerDiwyangViewModel :RegisterDiwyangViewModel
+   var latitude : Double = 0.0
+   var longitude : Double = 0.0
+
 
     @RequiresApi(Build.VERSION_CODES.M)
     private val cameraPermission =
@@ -90,10 +95,11 @@ class RegisterDiwyangFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         if(_binding==null) {
-            val registerDiwyangViewModel =
+            registerDiwyangViewModel =
                 ViewModelProvider(this).get(RegisterDiwyangViewModel::class.java)
             _binding = FragmentRegisterDiwyangBinding.inflate(inflater, container, false)
             addViewObservers()
+            addViewModelObservers()
         }
 
         zoneList = zoneMap.keys.toTypedArray()
@@ -108,15 +114,28 @@ class RegisterDiwyangFragment : Fragment() {
     @RequiresApi(Build.VERSION_CODES.M)
     private fun addViewObservers(){
         binding.buttonCheck.setOnClickListener {
-            binding.llRegistrationStep1.visibility = View.VISIBLE
+            /*binding.llRegistrationStep1.visibility = View.VISIBLE
             binding.buttonNext.visibility = View.VISIBLE
-            binding.tvRegistrationStep.text = resources.getString(R.string.registration_step_1)
+            binding.tvRegistrationStep.text = resources.getString(R.string.registration_step_1)*/
+            registerDiwyangViewModel.checkAadharCard(binding.etAadharNumber.text.toString())
         }
         binding.tvAddParentDetails.setOnClickListener {
             binding.llParentDetailsContainer.visibility = View.VISIBLE
             getLocation()
         }
         binding.buttonNext.setOnClickListener {
+            if (binding.llRegistrationStep1.visibility == View.VISIBLE){
+                registerDiwyangViewModel.registerUser(binding.etFirstName.text.toString(),
+                    binding.etMiddleName.text.toString(),
+                    binding.etLastName.text.toString(),
+                    binding.etAddress.text.toString(),
+                    binding.etDOB.text.toString(),
+                    binding.spinnerTypeOfDivyang.selectedItem.toString(),
+                    binding.etMobileNumber.text.toString(),
+                    latitude.toString(),
+                    longitude.toString(),
+                )
+            }
             controlVisibility()
         }
 
@@ -210,6 +229,27 @@ class RegisterDiwyangFragment : Fragment() {
                 binding.etParentMobileNumber.setText("")
             }
         }
+    }
+
+    private fun addViewModelObservers(){
+        registerDiwyangViewModel.isAadharCardExists.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+            if (it){
+                Toast.makeText(requireContext(), "Aadhar Card registration already present", Toast.LENGTH_LONG).show()
+            }else{
+                binding.llRegistrationStep1.visibility = View.VISIBLE
+                binding.buttonNext.visibility = View.VISIBLE
+                binding.tvRegistrationStep.text = resources.getString(R.string.registration_step_1)
+            }
+        })
+
+        registerDiwyangViewModel.isApplicantDataSubmitted.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
+            if (it){
+                controlVisibility()
+            }else{
+                Toast.makeText(requireContext(), "Serve Error Please Try Later", Toast.LENGTH_LONG).show()
+
+            }
+        })
     }
     override fun onDestroyView() {
         super.onDestroyView()
@@ -317,6 +357,8 @@ class RegisterDiwyangFragment : Fragment() {
                             geocoder.getFromLocation(location.latitude, location.longitude, 1)
                         Log.e("Gaurav", "Latitude\\n${list[0].latitude}")
                         Log.e("Gaurav", "Longitude\n${list[0].longitude}}")
+                        latitude = list[0].latitude
+                        longitude = list[0].longitude
                         /*mainBinding.apply {
                             tvLatitude.text = "Latitude\n${list[0].latitude}"
                             tvLongitude.text = "Longitude\n${list[0].longitude}"

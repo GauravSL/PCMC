@@ -36,7 +36,7 @@ public class ServerDataTransfer {
     public Response accessAPI(String url, String methodType, String jsonData) throws IOException {
 
         //url = BASE_URL + url;
-        url = BASE_URL + url;
+        //url = BASE_URL + url;
         //methodType = methodType;
         HashMap<String, String> data = null;
         //bodyData = "{\"message\":\"Hello\"}";
