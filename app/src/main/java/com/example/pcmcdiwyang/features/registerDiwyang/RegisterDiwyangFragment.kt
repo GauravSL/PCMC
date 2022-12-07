@@ -40,6 +40,7 @@ import android.location.LocationManager
 import android.provider.Settings
 import android.widget.TextView
 import androidx.core.app.ActivityCompat
+import com.example.pcmcdiwyang.Utils
 import com.google.android.gms.location.LocationServices
 
 class RegisterDiwyangFragment : Fragment() {
@@ -114,10 +115,15 @@ class RegisterDiwyangFragment : Fragment() {
     @RequiresApi(Build.VERSION_CODES.M)
     private fun addViewObservers(){
         binding.buttonCheck.setOnClickListener {
+            if (Utils.isInternetAvailable(requireContext())){
+                registerDiwyangViewModel.checkAadharCard(binding.etAadharNumber.text.toString())
+
+            }
             /*binding.llRegistrationStep1.visibility = View.VISIBLE
             binding.buttonNext.visibility = View.VISIBLE
             binding.tvRegistrationStep.text = resources.getString(R.string.registration_step_1)*/
-            registerDiwyangViewModel.checkAadharCard(binding.etAadharNumber.text.toString())
+
+           // registerDiwyangViewModel.checkAadharCard(binding.etAadharNumber.text.toString())
         }
         binding.tvAddParentDetails.setOnClickListener {
             binding.llParentDetailsContainer.visibility = View.VISIBLE
@@ -125,16 +131,25 @@ class RegisterDiwyangFragment : Fragment() {
         }
         binding.buttonNext.setOnClickListener {
             if (binding.llRegistrationStep1.visibility == View.VISIBLE){
-                registerDiwyangViewModel.registerUser(binding.etFirstName.text.toString(),
-                    binding.etMiddleName.text.toString(),
-                    binding.etLastName.text.toString(),
-                    binding.etAddress.text.toString(),
-                    binding.etDOB.text.toString(),
-                    binding.spinnerTypeOfDivyang.selectedItem.toString(),
-                    binding.etMobileNumber.text.toString(),
-                    latitude.toString(),
-                    longitude.toString(),
-                )
+                if (Utils.isInternetAvailable(requireContext())) {
+                    registerDiwyangViewModel.registerUser(
+                        binding.etFirstName.text.toString(),
+                        binding.etMiddleName.text.toString(),
+                        binding.etLastName.text.toString(),
+                        binding.etAddress.text.toString(),
+                        binding.etDOB.text.toString(),
+                        binding.spinnerTypeOfDivyang.selectedItem.toString().split("(")[0].replace(")",""),
+                        binding.etMobileNumber.text.toString(),
+                        latitude.toString(),
+                        longitude.toString(),
+                        binding.etAadharNumber.text.toString(),
+                        binding.etParentName.text.toString(),
+                        binding.etParentAddress.text.toString(),
+                        binding.etParentAadharNumber.text.toString(),
+                        binding.etParentMobileNumber.text.toString(),
+                        binding.etUDID.text.toString(),
+                    )
+                }
             }
             controlVisibility()
         }

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="@dimen/dp10">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:orientation="vertical"
+        android:padding="@dimen/dp5">
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/dp20">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/logo_pcmc"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/dp5"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="@dimen/dp5"
+                android:layout_weight="1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:text="पिंपरी चिंचवड महानगरपालिका, पिंपरी १८"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="समाज विकास विभाग (दिव्यांग कक्ष)"
+                    android:layout_marginTop="@dimen/dp5"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="दिव्यांग कल्याणकारी योजना"
+                    android:layout_marginTop="@dimen/dp5"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="★ हयातीचे प्रमाणपत्र ★ "
+                    android:textStyle="bold"
+                    android:layout_marginTop="@dimen/dp5"/>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="90dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="@dimen/dp5"
+                android:src="@drawable/profile_icon"
+                android:layout_gravity="center"
+                android:background="@drawable/blue_edittext_rounded_corner"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/dp20">
+            <TextView
+                android:id="@+id/tvLine1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_pdf_line_1"
+                android:textSize="@dimen/sp12"
+                android:layout_marginStart="@dimen/dp10"
+                android:layout_marginEnd="@dimen/dp10"/>
+
+            <TextView
+                android:id="@+id/tvLine2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_pdf_line_2"
+                android:layout_marginTop="@dimen/dp5"
+                android:textSize="@dimen/sp12"
+                android:layout_marginStart="@dimen/dp10"
+                android:layout_marginEnd="@dimen/dp10"/>
+
+            <TextView
+                android:id="@+id/tvLine3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp10"
+                android:layout_marginTop="@dimen/dp5"
+                android:layout_marginEnd="@dimen/dp10"
+                android:text="@string/txt_pdf_line_3"
+                android:textSize="@dimen/sp12" />
+
+            <TextView
+                android:id="@+id/tvLine4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp10"
+                android:layout_marginTop="@dimen/dp5"
+                android:layout_marginEnd="@dimen/dp10"
+                android:text="@string/txt_pdf_line_4"
+                android:textSize="@dimen/sp12" />
+
+            <TextView
+                android:id="@+id/tvLine5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp10"
+                android:layout_marginTop="@dimen/dp5"
+                android:layout_marginEnd="@dimen/dp10"
+                android:text="@string/txt_pdf_line_5"
+                android:textSize="@dimen/sp12" />
+
+<TextView
+    android:id="@+id/tvLine6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp10"
+                android:layout_marginTop="@dimen/dp5"
+                android:layout_marginEnd="@dimen/dp10"
+                android:text="@string/txt_pdf_line_6"
+                android:textSize="@dimen/sp12" />
+
+            <TextView
+                android:id="@+id/tvLine7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp10"
+                android:layout_marginTop="@dimen/dp5"
+                android:layout_marginEnd="@dimen/dp10"
+                android:text="@string/txt_pdf_line_7"
+                android:textSize="@dimen/sp12" />
+
+            <TextView
+                android:id="@+id/tvLine8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp10"
+                android:layout_marginTop="@dimen/dp5"
+                android:layout_marginEnd="@dimen/dp10"
+                android:text="@string/txt_pdf_line_8"
+                android:textSize="@dimen/sp12"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp10"
+                android:layout_marginTop="@dimen/dp15"
+                android:layout_marginEnd="@dimen/dp10"
+                android:text="      प्रमाणित करतो / करते की, मी /माझा पाल्य पिंपरी चिंचवड महानगरपालिकेच्या 'दिव्यांग कल्याणकारी योजने' अंतर्गत 'पंडित दीनदयाल उपाध्याय अर्थसहाय्य / विशेष (मतिमंद) लाभार्थीचा सांभाळ करणा-या संस्थेस/पालकांस अर्थसहाय्य / कुष्ठपिडीत व्यक्तींना अर्थसहाय्य' या योजने अंतर्गत लाभ घेत असून मी / तो / ती आज रोजी हयात आहे. असे असलेबाबतचे माझे / त्याचे / तीचे हयातीचे प्रमाणपत्र सन २०२२ २०२३  करिता सादर करीत आहे."
+                android:textSize="@dimen/sp12"/>
+
+
+            <TextView
+                android:id="@+id/tvLine9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp10"
+                android:layout_marginTop="@dimen/dp25"
+                android:layout_marginEnd="@dimen/dp10"
+                android:text="@string/txt_pdf_line_9"
+                android:textSize="@dimen/sp12" />
+
+            <TextView
+                android:id="@+id/tvLine10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp10"
+                android:layout_marginTop="@dimen/dp10"
+                android:layout_marginEnd="@dimen/dp10"
+                android:layout_marginBottom="@dimen/dp20"
+                android:text="@string/txt_pdf_line_10"
+                android:textSize="@dimen/sp12" />
+
+        </LinearLayout>
+
+</LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

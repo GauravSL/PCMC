@@ -18,6 +18,14 @@ data class ApplicantData(
     @SerializedName("mobile"       ) var mobile       : String?  = null,
     @SerializedName("lat"          ) var lat          : String?  = null,
     @SerializedName("long"         ) var long         : String?  = null,
-    @SerializedName("isActive"     ) var isActive     : Boolean? = null
+    @SerializedName("isActive"     ) var isActive     : Boolean? = null,
+    @SerializedName("UDID"         ) var UDID         : String? = null,
+    @SerializedName("pName"         ) var pName         : String? = null,
+    @SerializedName("pDOB"         ) var pDOB         : String? = null,
+    @SerializedName("pAddress"         ) var pAddress         : String? = null,
+    @SerializedName("pAge"         ) var pAge         : String? = null,
+    @SerializedName("pAddhar"         ) var pAddhar         : String? = null,
+    @SerializedName("pMobile"         ) var pMobile         : String? = null,
+    @SerializedName("ward"         ) var ward         : String? = null
 
-)
+) : java.io.Serializable

@@ -44,9 +44,15 @@ class RegisterDiwyangViewModel : ViewModel() {
                      handicapType : String,
                      mobile : String,
                      lat : String,
-                     long : String){
+                     long : String,
+                     addhar : String,
+                     pName : String,
+                     pAddress : String,
+                     pAddhar : String,
+                     pMobile : String,
+                     UDID : String){
         GlobalScope.launch {
-            registerUserOnServer(firstName, middleName, lastName, address, DOB, handicapType, mobile, lat, long)
+            registerUserOnServer(firstName, middleName, lastName, address, DOB, handicapType, mobile, lat, long,addhar, pName, pAddress, pAddhar, pMobile, UDID)
         }
     }
 
@@ -58,7 +64,14 @@ class RegisterDiwyangViewModel : ViewModel() {
                                      handicapType : String,
                                      mobile : String,
                                      lat : String,
-                                     long : String) {
+                                     long : String,
+                                     addhar : String,
+                                     pName : String,
+                                     pAddress : String,
+                                     pAddhar : String,
+                                     pMobile : String,
+                                     UDID : String
+    ) {
         val jsonObject = JSONObject()
         jsonObject.put("firstName",firstName)
         jsonObject.put("middleName",middleName)
@@ -72,6 +85,16 @@ class RegisterDiwyangViewModel : ViewModel() {
         jsonObject.put("city","")
         jsonObject.put("zipcode","")
         jsonObject.put("email","")
+
+        jsonObject.put("addhar",addhar)
+        jsonObject.put("pName",pName)
+        jsonObject.put("pDOB","")
+        jsonObject.put("pAddress",pAddress)
+        jsonObject.put("pAge",0)
+        jsonObject.put("pAddhar",pAddhar)
+        jsonObject.put("pMobile",pMobile)
+        jsonObject.put("UDID",UDID)
+        jsonObject.put("wardWardId",1)
 
         val response = dataTransfer.accessAPI(Constant.ADD_APPLICANT_DATA, Constant.POST, jsonObject.toString())
         if (response.statusCode == 200){

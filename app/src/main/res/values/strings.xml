@@ -115,5 +115,16 @@
     <string name="txt_scan_fingerprint">Scan Finger Print</string>
     <string name="txt_scan_eyes">Scan Eyes</string>
     <string name="txt_upload_docs">Upload Documents</string>
+    <string name="txt_no_internet">Please Check Internet Connection</string>
+    <string name="txt_pdf_line_1">पिंपरी चिंचवड महानगरपालिका क्षेत्रीय कार्यालय - %1$s वॉर्ड क्र. - %2$s</string>
+    <string name="txt_pdf_line_2">दिव्यांग लाभार्थीचे नाव : श्री. / श्रीमती - %1$s जन्म तारीख - %2$s</string>
+    <string name="txt_pdf_line_3">राहणार - %1$s</string>
+    <string name="txt_pdf_line_4">आधार क्रमांक - %1$s मोबाईल क्रमांक - %2$s</string>
+    <string name="txt_pdf_line_5">दिव्यांग प्रकार - %1$s</string>
+    <string name="txt_pdf_line_6"><b>पालकाचे नाव</b> : श्री. / श्रीमती- %1$s</string>
+    <string name="txt_pdf_line_7">राहणार - %1$s</string>
+    <string name="txt_pdf_line_8">आधार क्रमांक - %1$s मोबाईल क्रमांक - %2$s</string>
+    <string name="txt_pdf_line_9">ठिकाण : - %1$s</string>
+    <string name="txt_pdf_line_10">दिनांक :- %1$s     लाभार्थी/पालक/नाव :- %2$s</string>
     <!--Till Here-->
 </resources>

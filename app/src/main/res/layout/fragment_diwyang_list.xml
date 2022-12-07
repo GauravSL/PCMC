@@ -72,7 +72,7 @@
 
         </LinearLayout>
     </LinearLayout>
-    <ScrollView
+    <!--<ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="visible">
@@ -1165,13 +1165,13 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
         </LinearLayout>
-    </ScrollView>
+    </ScrollView>-->
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/list"
+        android:id="@+id/rvDivyangList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layoutManager="LinearLayoutManager"
         android:layout_margin="@dimen/dp5"
-        android:visibility="gone"/>
+        android:visibility="visible"/>
 </LinearLayout>
