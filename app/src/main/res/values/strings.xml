@@ -127,4 +127,11 @@
     <string name="txt_pdf_line_9">ठिकाण : - %1$s</string>
     <string name="txt_pdf_line_10">दिनांक :- %1$s     लाभार्थी/पालक/नाव :- %2$s</string>
     <!--Till Here-->
+
+    <string name="tfe_od_app_name" translation_description="Object Detection demo app [CHAR_LIMIT=40]">Face Capture</string>
+    <string name="tfe_od_camera_error" translation_description="Error regarding camera support[CHAR_LIMIT=40]">This device doesn\'t support Camera2 API.</string>
+    <string name="text_face_recognition">Face Recognation</string>
+    <string name="txt_Cancel">Cancel</string>
+    <string name="text_reset">Reset</string>
+
 </resources>

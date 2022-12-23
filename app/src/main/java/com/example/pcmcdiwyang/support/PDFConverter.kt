@@ -1,6 +1,5 @@
 package com.example.pcmcdiwyang.support
 
-import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.ActivityNotFoundException
 import android.content.Context
@@ -9,17 +8,14 @@ import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.pdf.PdfDocument
 import android.os.Build
-import android.text.Html
 import android.util.DisplayMetrics
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.core.content.FileProvider
-import androidx.core.content.res.TypedArrayUtils.getString
-import androidx.recyclerview.widget.RecyclerView
 import com.example.pcmcdiwyang.R
-import com.example.pcmcdiwyang.data.ApplicantData
+import com.example.pcmcdiwyang.data.model.ApplicantData
 import java.io.File
 import java.io.FileOutputStream
 import java.util.*
@@ -79,7 +75,6 @@ class PDFConverter {
     }
 
     @RequiresApi(Build.VERSION_CODES.N)
-    @SuppressLint("MissingInflatedId")
     fun createPdf(
         context: Context,
         activity: Activity,
@@ -103,7 +98,7 @@ class PDFConverter {
         val tvLine9 = view.findViewById<TextView>(R.id.tvLine9)
         val tvLine10 = view.findViewById<TextView>(R.id.tvLine10)
 
-        tvLine1.text = String.format(context.getString(R.string.txt_pdf_line_1), "A", applicantData?.ward)
+        tvLine1.text = String.format(context.getString(R.string.txt_pdf_line_1), applicantData?.city, applicantData?.zipcode)
         val name ="${applicantData?.firstName} ${applicantData?.middleName} ${applicantData?.lastName}"
         tvLine2.text = String.format(context.getString(R.string.txt_pdf_line_2), name, applicantData?.DOB)
         tvLine3.text = String.format(context.getString(R.string.txt_pdf_line_3), applicantData?.address)

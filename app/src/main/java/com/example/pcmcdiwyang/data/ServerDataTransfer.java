@@ -44,6 +44,7 @@ public class ServerDataTransfer {
         StringBuilder response = new StringBuilder();
         Response responseObject = new Response();
         Log.v(TAG, " URL " + url);
+        Log.v(TAG, "JSONDATA" + jsonData);
 
         TrustManager[] trustAllCerts = new TrustManager[]{new X509TrustManager() {
             public X509Certificate[] getAcceptedIssuers() {
@@ -259,7 +260,7 @@ public class ServerDataTransfer {
 
         }
         responseObject.setResponse(response.toString());
-        Log.v("DataTransfer", url + " response : " + response);
+        Log.v(TAG, "Response : " + response);
 
         return responseObject;
     }

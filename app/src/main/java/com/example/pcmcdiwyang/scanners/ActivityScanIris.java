@@ -14,6 +14,7 @@ import android.graphics.Paint;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
@@ -234,6 +235,7 @@ public class ActivityScanIris extends AppCompatActivity implements MIDIrisAuth_C
     MIS100 mis100 = null;
 
     private static boolean isCaptureRunning = false;
+    private boolean isVerification = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -258,6 +260,12 @@ public class ActivityScanIris extends AppCompatActivity implements MIDIrisAuth_C
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(2);
         paint.setAntiAlias(true);
+
+        Bundle bundle = getIntent().getExtras();
+        if (bundle!=null)
+            isVerification = bundle.getBoolean("isVerification", false);
+
+        Log.e("Gaurav","isVerification FP"+ isVerification);
     }
 
     @Override
@@ -636,6 +644,8 @@ public class ActivityScanIris extends AppCompatActivity implements MIDIrisAuth_C
     private void setResult(){
         Intent returnIntent = new Intent();
         returnIntent.putExtra("data",previewBitmap);
+        String encodedString = Base64.encodeToString(lastCapIrisData, Base64.DEFAULT);
+        returnIntent.putExtra("serverData",encodedString);
         setResult(Activity.RESULT_OK,returnIntent);
         finish();
     }

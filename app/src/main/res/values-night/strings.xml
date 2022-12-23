@@ -103,4 +103,12 @@
         <item>12a</item>
         <item>15a</item>
     </array>
+
+
+    <string name="tfe_od_app_name" translation_description="Object Detection demo app [CHAR_LIMIT=40]">Face Recognition</string>
+    <string name="tfe_od_camera_error" translation_description="Error regarding camera support[CHAR_LIMIT=40]">This device doesn\'t support Camera2 API.</string>
+    <string name="text_face_recognition">Face Recognation</string>
+    <string name="txt_Cancel">Cancel</string>
+    <string name="text_reset">Reset</string>
+
 </resources>

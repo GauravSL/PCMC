@@ -26,6 +26,7 @@
             android:layout_marginTop="@dimen/dp10">
 
             <LinearLayout
+                android:id="@+id/scanButtonContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -81,17 +82,19 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/matcherScanContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp10"
-            android:orientation="horizontal" >
+            android:orientation="horizontal"
+            android:visibility="gone">
 
             <Button
                 android:id="@+id/btnMatchISOTemplate"
                 style="@style/buttonbig2"
                 android:onClick="onControlClicked"
                 android:text="@string/txt_validate_fp"
-                android:visibility="gone"/>
+                android:visibility="visible"/>
 
             <Button
                 android:id="@+id/btnExtractISOImage"
@@ -101,7 +104,7 @@
                 android:visibility="gone"/>
 
             <Button
-                android:id="@+id/btnSubmit"
+                android:id="@+id/btnSubmit1"
                 style="@style/buttonbig2"
                 android:onClick="onControlClicked"
                 android:text="@string/txt_Submit"
@@ -128,6 +131,13 @@
 
         </LinearLayout>
 
+        <Button
+            android:id="@+id/btnSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onControlClicked"
+            android:text="@string/txt_Submit"
+            android:visibility="gone"/>
     </LinearLayout>
 
     <LinearLayout

@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".features.registerDiwyang.RegisterDiwyangFragment">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@color/gray_15_trans"
     android:orientation="vertical"
-    tools:context=".features.registerDiwyang.RegisterDiwyangFragment">
+    android:layout_alignParentTop="true">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -107,7 +114,7 @@
 
                     <TextView
                         style="@style/BoldTextviewStyleBlack"
-                        android:text="@string/text_first_name" />
+                        android:text="@string/text_first_name"/>
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
@@ -124,7 +131,8 @@
                             android:gravity="center_vertical"
                             android:maxLines="1"
                             android:padding="@dimen/dp5"
-                            android:textSize="@dimen/sp18" />
+                            android:textSize="@dimen/sp18"
+                            android:textCursorDrawable="@drawable/edittext_cussor"/>
                     </androidx.cardview.widget.CardView>
 
                     <TextView
@@ -146,7 +154,8 @@
                             android:gravity="center_vertical"
                             android:maxLines="1"
                             android:padding="@dimen/dp5"
-                            android:textSize="@dimen/sp18" />
+                            android:textSize="@dimen/sp18"
+                            android:textCursorDrawable="@drawable/edittext_cussor"/>
                     </androidx.cardview.widget.CardView>
 
 
@@ -169,7 +178,8 @@
                             android:gravity="center_vertical"
                             android:maxLines="1"
                             android:padding="@dimen/dp5"
-                            android:textSize="@dimen/sp18" />
+                            android:textSize="@dimen/sp18"
+                            android:textCursorDrawable="@drawable/edittext_cussor"/>
                     </androidx.cardview.widget.CardView>
 
 
@@ -219,7 +229,8 @@
                             android:gravity="center_vertical"
                             android:maxLines="1"
                             android:padding="@dimen/dp5"
-                            android:textSize="@dimen/sp18" />
+                            android:textSize="@dimen/sp18"
+                            android:textCursorDrawable="@drawable/edittext_cussor"/>
                     </androidx.cardview.widget.CardView>
 
 
@@ -244,7 +255,8 @@
                             android:maxLength="10"
                             android:maxLines="1"
                             android:padding="@dimen/dp5"
-                            android:textSize="@dimen/sp18" />
+                            android:textSize="@dimen/sp18"
+                            android:textCursorDrawable="@drawable/edittext_cussor"/>
                     </androidx.cardview.widget.CardView>
 
 
@@ -330,7 +342,8 @@
                             android:maxLines="6"
                             android:padding="@dimen/dp5"
                             android:scrollbars="vertical"
-                            android:textSize="@dimen/sp18" />
+                            android:textSize="@dimen/sp18"
+                            android:textCursorDrawable="@drawable/edittext_cussor"/>
                     </androidx.cardview.widget.CardView>
 
 
@@ -384,20 +397,23 @@
                             android:gravity="center_vertical"
                             android:maxLines="1"
                             android:padding="@dimen/dp5"
-                            android:textSize="@dimen/sp18" />
+                            android:textSize="@dimen/sp18"
+                            android:textCursorDrawable="@drawable/edittext_cussor"/>
                     </androidx.cardview.widget.CardView>
 
 
                     <TextView
                         style="@style/BoldTextviewStyleBlack"
-                        android:text="@string/text_DOB" />
+                        android:text="@string/text_DOB"
+                        android:visibility="gone"/>
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="3dp"
                         app:cardBackgroundColor="@color/white"
-                        app:cardElevation="@dimen/dp5">
+                        app:cardElevation="@dimen/dp5"
+                        android:visibility="gone">
 
                         <androidx.appcompat.widget.AppCompatEditText
                             android:id="@+id/etParentDOB"
@@ -412,7 +428,8 @@
                             android:gravity="center_vertical"
                             android:maxLines="1"
                             android:padding="@dimen/dp5"
-                            android:textSize="@dimen/sp18" />
+                            android:textSize="@dimen/sp18"
+                            android:textCursorDrawable="@drawable/edittext_cussor"/>
                     </androidx.cardview.widget.CardView>
 
 
@@ -437,7 +454,8 @@
                             android:maxLength="14"
                             android:maxLines="1"
                             android:padding="@dimen/dp5"
-                            android:textSize="@dimen/sp18" />
+                            android:textSize="@dimen/sp18"
+                            android:textCursorDrawable="@drawable/edittext_cussor"/>
                     </androidx.cardview.widget.CardView>
 
 
@@ -462,7 +480,8 @@
                             android:maxLength="10"
                             android:maxLines="1"
                             android:padding="@dimen/dp5"
-                            android:textSize="@dimen/sp18" />
+                            android:textSize="@dimen/sp18"
+                            android:textCursorDrawable="@drawable/edittext_cussor"/>
                     </androidx.cardview.widget.CardView>
 
                     <CheckBox
@@ -494,7 +513,8 @@
                             android:gravity="center_vertical"
                             android:maxLines="6"
                             android:padding="@dimen/dp5"
-                            android:textSize="@dimen/sp18" />
+                            android:textSize="@dimen/sp18"
+                            android:textCursorDrawable="@drawable/edittext_cussor"/>
                     </androidx.cardview.widget.CardView>
 
                     <CheckBox
@@ -736,6 +756,48 @@
                     android:textSize="@dimen/sp18"
                     android:gravity="center"
                     android:text="@string/txt_upload_docs"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/dp10">
+                    <ImageView
+                        android:id="@+id/proofProfilePic"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:padding="@dimen/dp2"
+                        android:src="@drawable/profile_icon"
+                        android:background="@drawable/red_edittext_rounded_corner"/>
+
+                    <TextView
+                        style="@style/BoldTextviewStyleBlack"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/txt_profile_picture"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/dp10"/>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/buttonUploadProfilePic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/dp30"
+                        android:layout_gravity="center"
+                        android:background="@drawable/red_button_rounded_corner"
+                        android:elevation="@dimen/dp25"
+                        android:text="@string/text_upload"
+                        android:textStyle="bold"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/red_700"
+                    android:layout_marginTop="@dimen/dp5"
+                    android:layout_marginBottom="@dimen/dp5"/>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -875,3 +937,14 @@
     </ScrollView>
 
 </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:indeterminate="true"
+        android:indeterminateTintMode="src_atop"
+        android:indeterminateTint="@color/red_500"
+        android:visibility="gone"/>
+</RelativeLayout>

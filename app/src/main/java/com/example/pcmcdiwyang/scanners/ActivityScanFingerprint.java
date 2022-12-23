@@ -9,6 +9,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
@@ -16,16 +17,19 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.TextView.BufferType;
 import android.widget.Toast;
 import com.example.pcmcdiwyang.R;
+import com.example.pcmcdiwyang.Temp;
 import com.mantra.mfs100.FingerData;
 import com.mantra.mfs100.MFS100;
 import com.mantra.mfs100.MFS100Event;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
+import java.util.Arrays;
 
 public class ActivityScanFingerprint extends AppCompatActivity implements MFS100Event {
 
@@ -43,9 +47,12 @@ public class ActivityScanFingerprint extends AppCompatActivity implements MFS100
     EditText txtEventLog;
     ImageView imgFinger;
     CheckBox cbFastDetection;
+    LinearLayout scanButtonContainer;
+    LinearLayout matcherScanContainer;
     private static long mLastClkTime = 0;
     private static long Threshold = 1500;
     private Bitmap fpBitmap;
+    private boolean isMatchSuccess = false;
 
     private enum ScannerAction {
         Capture, Verify
@@ -60,6 +67,7 @@ public class ActivityScanFingerprint extends AppCompatActivity implements MFS100
     MFS100 mfs100 = null;
 
     private boolean isCaptureRunning = false;
+    private boolean isVerification = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +86,14 @@ public class ActivityScanFingerprint extends AppCompatActivity implements MFS100
             mfs100.SetApplicationContext(ActivityScanFingerprint.this);
         } catch (Exception e) {
             e.printStackTrace();
+        }
+
+        Bundle bundle = getIntent().getExtras();
+        if (bundle!=null) {
+            isVerification = bundle.getBoolean("isVerification", false);
+            Enroll_Template = Temp.StringToByteArray(Temp.fingerPrint);
+            scanButtonContainer.setVisibility(View.GONE);
+            matcherScanContainer.setVisibility(View.VISIBLE);
         }
     }
 
@@ -138,6 +154,8 @@ public class ActivityScanFingerprint extends AppCompatActivity implements MFS100
             btnStopCapture = findViewById(R.id.btnStopCapture);
             cbFastDetection = findViewById(R.id.cbFastDetection);
             btnSubmit = findViewById(R.id.btnSubmit);
+            matcherScanContainer = findViewById(R.id.matcherScanContainer);
+            scanButtonContainer = findViewById(R.id.scanButtonContainer);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -167,6 +185,7 @@ public class ActivityScanFingerprint extends AppCompatActivity implements MFS100
                     break;
                 case R.id.btnMatchISOTemplate:
                     scannerAction = ScannerAction.Verify;
+                    btnSubmit.setVisibility(View.GONE);
                     if (!isCaptureRunning) {
                         StartSyncCapture();
                     }
@@ -259,6 +278,7 @@ public class ActivityScanFingerprint extends AppCompatActivity implements MFS100
                             public void run() {
                                 imgFinger.setImageBitmap(bitmap);
                                 fpBitmap = bitmap;
+                                if (scannerAction.equals(ScannerAction.Capture))
                                 btnSubmit.setVisibility(View.VISIBLE);
                             }
                         });
@@ -482,6 +502,7 @@ public class ActivityScanFingerprint extends AppCompatActivity implements MFS100
         try {
             if (scannerAction.equals(ScannerAction.Capture)) {
                 Enroll_Template = new byte[fingerData.ISOTemplate().length];
+
                 System.arraycopy(fingerData.ISOTemplate(), 0, Enroll_Template, 0,
                         fingerData.ISOTemplate().length);
             } else if (scannerAction.equals(ScannerAction.Verify)) {
@@ -496,9 +517,13 @@ public class ActivityScanFingerprint extends AppCompatActivity implements MFS100
                     SetTextOnUIThread("Error: " + ret + "(" + mfs100.GetErrorMsg(ret) + ")");
                 } else {
                     if (ret >= 96) {
-                        SetTextOnUIThread("Finger matched with score: " + ret);
+                        SetTextOnUIThread("Finger matched");
+                        isMatchSuccess = true;
+                        btnSubmit.setVisibility(View.VISIBLE);
                     } else {
-                        SetTextOnUIThread("Finger not matched, score: " + ret);
+                        SetTextOnUIThread("Finger not matched");
+                        isMatchSuccess = false;
+                        btnSubmit.setVisibility(View.GONE);
                     }
                 }
             }
@@ -602,8 +627,21 @@ public class ActivityScanFingerprint extends AppCompatActivity implements MFS100
     }
 
     private void setResult(){
+        /*Log.e("Gaurav", Arrays.toString(lastCapFingerData.ISOTemplate()));
+        String str = Temp.ByteArrayToString(lastCapFingerData.ISOTemplate());
+       // String str = "PCPC";
+        Log.e("Gaurav","BtoS "+str);
+        byte[] btr = Temp.StringToByteArray(str);
+        Log.e("Gaurav", Arrays.toString(btr));
+        String str1 = Temp.ByteArrayToString(btr);
+        Log.e("Gaurav","BtoS "+str1);*/
+
+
         Intent returnIntent = new Intent();
         returnIntent.putExtra("data",fpBitmap);
+        returnIntent.putExtra("result",isMatchSuccess);
+        String encodedString = Temp.ByteArrayToString(lastCapFingerData.ISOTemplate());
+        returnIntent.putExtra("serverData",encodedString);
         setResult(Activity.RESULT_OK,returnIntent);
         finish();
     }

@@ -1,16 +1,23 @@
 package com.example.pcmcdiwyang.features.diwyanglist
 
+import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pcmcdiwyang.R
-import com.example.pcmcdiwyang.data.ApplicantData
+import com.example.pcmcdiwyang.data.model.ApplicantData
+import com.example.pcmcdiwyang.scanners.face.tflite.SimilarityClassifier
 
 
 class DivyangListAdapter(private val applicantList: List<ApplicantData>, private val listner: DivyangListListner) : RecyclerView.Adapter<DivyangListAdapter.ViewHolder>() {
+
+    private var face :SimilarityClassifier.Recognition? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         // inflates the card_view_design view
@@ -35,6 +42,11 @@ class DivyangListAdapter(private val applicantList: List<ApplicantData>, private
         holder.itemView.setOnClickListener {
             listner.onItemSelected(divyangDetails)
         }
+
+       /* if (divyangDetails.face!=null){
+            holder.profilePic.setImageBitmap(divyangDetails.face)
+        }*/
+
     }
 
     // return the number of the items in the list
@@ -45,7 +57,7 @@ class DivyangListAdapter(private val applicantList: List<ApplicantData>, private
 
     // Holds the views for adding it to image and text
     class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
-        //val imageView: ImageView = itemView.findViewById(R.id.imageview)
+        val profilePic: ImageView = itemView.findViewById(R.id.profilePic)
         val txtName: TextView = itemView.findViewById(R.id.txtName)
         val txtAadharNumber: TextView = itemView.findViewById(R.id.txtaadharNumber)
         val txtUDID: TextView = itemView.findViewById(R.id.txtUDID)

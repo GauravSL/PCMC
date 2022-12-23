@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/dp5">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        style="@style/BoldTextviewStyleBlack"
+        android:text="Confirmation"
+        android:layout_gravity="center"
+        android:textSize="@dimen/sp18"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/red_500"
+        android:layout_margin="@dimen/dp5"/>
+
+    <TextView
+        android:id="@+id/tvMessage"
+        style="@style/BoldTextviewStyleBlack"
+        android:layout_gravity="center"
+        android:text="Are you sure you want to submit the data?"
+        android:layout_marginStart="@dimen/dp5"
+        android:layout_marginEnd="@dimen/dp5"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="@dimen/dp20"
+        android:layout_marginEnd="@dimen/dp20"
+        android:layout_marginTop="@dimen/dp5">
+
+        <Button
+            android:id="@+id/btnSubmit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/txt_Submit"/>
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/txt_Cancel"
+            android:layout_marginStart="@dimen/dp10"/>
+        </LinearLayout>
+
+</LinearLayout>

@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'dagger.hilt.android.plugin'
     id 'kotlin-kapt'
+    id 'de.undercouch.download'
 }
 
 android {
@@ -77,4 +78,14 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     //implementation 'com.squareup.okhttp3:okhttp:3.14.9'
+
+    implementation('org.tensorflow:tensorflow-lite:2.11.0') { changing = true }
+
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+    androidTestImplementation 'com.android.support.test:rules:1.0.2'
+    androidTestImplementation 'com.google.truth:truth:1.0.1'
+    implementation 'com.google.code.gson:gson:2.8.9'
+
+    // added MLKit dependencies for face detector
+    implementation 'com.google.mlkit:face-detection:16.1.5'
 }

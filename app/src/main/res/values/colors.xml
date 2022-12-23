@@ -21,4 +21,10 @@
     <color name="light_blue_A400">#FF00B0FF</color>
     <color name="black_overlay">#66000000</color>
 
+
+    <color name="tfe_color_primary">#ffa800</color>
+    <color name="tfe_color_primary_dark">#ff6f00</color>
+    <color name="tfe_color_accent">#425066</color>
+
+    <color name="tfe_semi_transparent">#66000000</color>
 </resources>
